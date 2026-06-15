@@ -1,0 +1,36 @@
+.products {
+  padding: 6rem 5rem;
+}
+
+.heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 400;
+
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.image {
+  aspect-ratio: 3 / 4;
+  background: #e9e4dc;
+
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.85rem;
+}

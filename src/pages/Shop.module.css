@@ -1,0 +1,20 @@
+.shop {
+  padding: 4rem 5rem;
+}
+
+.heading {
+  font-family: var(--font-serif);
+
+  font-size: 4rem;
+  font-weight: 400;
+
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 2.5rem;
+}
