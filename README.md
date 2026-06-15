@@ -1,14 +1,14 @@
-# 🛍️ Atelier Noir
+# Atelier Noir
 
 This project focuses on building a modern e-commerce experience using React components, client-side routing, API data fetching, state management, and shopping cart functionality.
 
 The storefront features curated luxury-inspired collections, interactive product cards, animated sections, and a persistent shopping cart experience.
 
-## 🔗 Live Demo
+## Live Demo
 
 [View Live Demo](https://netlify.app)
 
-## ✨ Features
+## Features
 
 * **Multi-page application** built with React Router
 * **Product catalog** fetched from an external API
@@ -24,7 +24,7 @@ The storefront features curated luxury-inspired collections, interactive product
 * **Cart persistence** using the browser's `localStorage` API
 * **Responsive layouts** using clean CSS Grid and Flexbox variables
 
-## 🛠️ Built With
+## Built With
 
 * **React** 
 * **React Router** 
