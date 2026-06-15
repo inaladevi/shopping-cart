@@ -1,36 +1,93 @@
 .products {
-  padding: 6rem 5rem;
+  padding: 3.5rem 5rem 6rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3rem;
 }
 
 .heading {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
   font-weight: 400;
+  letter-spacing: 0.02em;
+}
 
-  margin-bottom: 3rem;
+.viewAll {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.viewAll::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-dark);
+  transition: width 0.3s ease;
+}
+
+.viewAll:hover::after {
+  width: 100%;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
 }
 
-.image {
-  aspect-ratio: 3 / 4;
-  background: #e9e4dc;
+.card {
+  text-decoration: none;
+  color: var(--color-dark);
+  cursor: pointer;
+}
 
+.imgWrap {
+  overflow: hidden;
+  background: #ece8e1;
   margin-bottom: 1rem;
 }
 
-.card h3 {
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-
-  margin-bottom: 0.5rem;
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.card p {
-  font-size: 0.85rem;
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.name {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.price {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--color-muted);
 }

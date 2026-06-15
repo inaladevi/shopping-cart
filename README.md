@@ -1,16 +1,37 @@
-# React + Vite
+# 🛍️ Atelier Noir
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project focuses on building a modern e-commerce experience using React components, client-side routing, API data fetching, state management, and shopping cart functionality.
 
-Currently, two official plugins are available:
+The storefront features curated luxury-inspired collections, interactive product cards, animated sections, and a persistent shopping cart experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Live Demo
 
-## React Compiler
+[View Live Demo](https://netlify.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+* **Multi-page application** built with React Router
+* **Product catalog** fetched from an external API
+* **Shopping cart functionality**:
+    * Add products to cart
+    * Quantity selection (increment / decrement toggles)
+    * Remove products from cart
+* **Cart badge** displaying total quantity of items dynamically in the header
+* **Order summary** including:
+    * Subtotal
+    * Shipping calculation (Free over $500 benchmark)
+    * Total cost
+* **Cart persistence** using the browser's `localStorage` API
+* **Responsive layouts** using clean CSS Grid and Flexbox variables
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Built With
+
+* **React** 
+* **React Router** 
+* **Vite** 
+* **JavaScript** (ES6+)
+* **CSS Modules** 
+* **CSS Grid & Flexbox**
+* **DummyJSON API**
+* **Local Storage API** 
+

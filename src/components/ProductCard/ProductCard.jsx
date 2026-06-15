@@ -1,48 +1,53 @@
-import styles from "./ProductCard.module.css";
-import { useState } from "react";
+import { useState } from 'react'
+import styles from './ProductCard.module.css'
 
 function ProductCard({ product, addToCart }) {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1)
+  const [added, setAdded]       = useState(false)
+
+  const img   = product.thumbnail || product.image
+  const title = product.title
+  const price = product.price
+
+  function handleAdd() {
+    addToCart(product, quantity)
+    setAdded(true)
+    setTimeout(() => setAdded(false), 1500)
+  }
 
   return (
     <article className={styles.card}>
-      <img src={product.image} alt={product.title} className={styles.image} />
-
-      <h3 className={styles.title}>{product.title}</h3>
-
-      <p className={styles.price}>${product.price}</p>
-
-      <div className={styles.quantityControls}>
-        <button
-          className={styles.quantityButton}
-          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-        >
-          -
-        </button>
-
-        <input
-          className={styles.quantityInput}
-          type="number"
-          value={quantity}
-          onChange={(e) => setQuantity(Number(e.target.value))}
-        />
-
-        <button
-          className={styles.quantityButton}
-          onClick={() => setQuantity(quantity + 1)}
-        >
-          +
-        </button>
+      <div className={styles.imgWrap}>
+        <img src={img} alt={title} className={styles.image} />
+        <div className={styles.overlay}>
+          <button className={styles.quickAdd} onClick={handleAdd}>
+            {added ? 'Added ✓' : 'Quick Add'}
+          </button>
+        </div>
       </div>
 
-      <button
-        className={styles.addButton}
-        onClick={() => addToCart(product, quantity)}
-      >
-        Add TO BAG
+      <div className={styles.info}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.price}>${price}</p>
+      </div>
+
+      <div className={styles.quantityControls}>
+        <button className={styles.qBtn} onClick={() => setQuantity(q => Math.max(1, q - 1))}>−</button>
+        <input
+          className={styles.qInput}
+          type="number"
+          value={quantity}
+          min={1}
+          onChange={e => setQuantity(Math.max(1, Number(e.target.value)))}
+        />
+        <button className={styles.qBtn} onClick={() => setQuantity(q => q + 1)}>+</button>
+      </div>
+
+      <button className={`${styles.addButton} ${added ? styles.added : ''}`} onClick={handleAdd}>
+        {added ? 'Added to Bag ✓' : 'Add to Bag'}
       </button>
     </article>
-  );
+  )
 }
 
-export default ProductCard;
+export default ProductCard

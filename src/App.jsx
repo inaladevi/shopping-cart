@@ -1,12 +1,20 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Home from './pages/Home'
 import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 
 function App() {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem('atelier_noir_cart')
+    return savedCart ? JSON.parse(savedCart) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('atelier_noir_cart', JSON.stringify(cartItems))
+  }, [cartItems])
+  
   function removeFromCart(productId) {
     setCartItems(cartItems.filter(
       (item) => item.id !== productId));

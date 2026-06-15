@@ -1,4 +1,18 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Jost', sans-serif;
+
+  --color-bg: #f7f4ef;
+  --color-dark: #111111;
+  --color-muted: #888888;
+  --color-border: #e5e5e5;
+  --color-footer-bg: #0b0b0b;
+  --color-footer-text: #aaaaaa;
+}
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,10 +23,12 @@ html {
 }
 
 body {
-  background-color: #f7f4ef;
-  color: #111111;
-  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
 }
+
 
 img {
   display: block;
@@ -30,4 +46,26 @@ a {
 
 ul {
   list-style: none;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

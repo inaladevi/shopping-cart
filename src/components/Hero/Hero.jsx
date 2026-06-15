@@ -1,10 +1,12 @@
 import styles from './Hero.module.css'
 import heroImage from '../../assets/images/hero.png'
+import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
-    <section className={styles.hero}
-    style={{ backgroundImage: `url(${heroImage})` }}
+    <section
+      className={styles.hero}
+      style={{ backgroundImage: `url(${heroImage})` }}
     >
       <div className={styles.overlay}>
         <p className={styles.eyebrow}>NEW SEASON</p>
@@ -19,7 +21,9 @@ function Hero() {
           Luxury pieces curated for the modern wardrobe.
         </p>
 
-        <button className={styles.button}>Shop Collection</button>
+        <Link to="/shop" className={styles.button}>
+          SHOP COLLECTION
+        </Link>
       </div>
     </section>
   );

@@ -1,26 +1,50 @@
 .shop {
-  padding: 4rem 5rem;
+  padding: 5rem 5rem 6rem;
 }
 
 .heading {
   font-family: var(--font-serif);
-
-  font-size: 4rem;
+  font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
 
-  margin-bottom: 3rem;
+.sub {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
 }
 
 .grid {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
-  gap: 2.5rem;
+  gap: 2.5rem 2rem;
 }
 
-.title {
-  min-height: 2.5rem;
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 8rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
 
+.loading span::after {
+  content: '...';
+  display: inline-block;
+  animation: dots 1.2s steps(3, end) infinite;
+  width: 1.2em;
   overflow: hidden;
+  vertical-align: bottom;
+}
+
+@keyframes dots {
+  0%   { width: 0 }
+  100% { width: 1.2em }
 }
