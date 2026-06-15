@@ -18,3 +18,9 @@
 
   gap: 2.5rem;
 }
+
+.title {
+  min-height: 2.5rem;
+
+  overflow: hidden;
+}

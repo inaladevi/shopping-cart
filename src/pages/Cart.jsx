@@ -1,32 +1,68 @@
 import Navbar from '../components/Navbar/Navbar'
+import styles from './Cart.module.css'
 
 function Cart({ cartItems, removeFromCart }) {
+  const subtotal = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
+
   return (
     <>
       <Navbar cartItems={cartItems} />
 
-      <main>
-        <h1>Cart</h1>
+      <main className={styles.cart}>
+        <h1 className={styles.heading}>YOUR BAG</h1>
 
-        <section>
-          {cartItems.length === 0 ? (
-            <p>Your Cart Is Empty</p>
-          ) : (
-            cartItems.map((item) => (
-              <article key={item.id}>
-                <h2>{item.title}</h2>
+        {cartItems.length === 0 ? (
+          <p className={styles.empty}>Your shopping bag is empty.</p>
+        ) : (
+          <section className={styles.cartLayout}>
+            <section className={styles.items}>
+              {cartItems.map((item) => (
+                <article key={item.id} className={styles.item}>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className={styles.image}
+                  />
 
-                <p>Price: ${item.price}</p>
+                  <div className={styles.details}>
+                    <h2>{item.title}</h2>
 
-                <p>Quantity: {item.quantity}</p>
+                    <p>Quantity: {item.quantity}</p>
 
-                <button onClick={() => removeFromCart(item.id)}>
-                  Remove
-                </button>
-              </article>
-            ))
-          )}
-        </section>
+                    <p>${item.price}</p>
+
+                    <button onClick={() => removeFromCart(item.id)}>
+                      Remove
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </section>
+
+            <div className={styles.summary}>
+              <h2>ORDER SUMMARY</h2>
+
+              <div className={styles.row}>
+                <span>Subtotal</span>
+                <span>${subtotal.toFixed(2)}</span>
+              </div>
+
+              <div className={styles.row}>
+                <span>Total</span>
+                <span>${subtotal.toFixed(2)}</span>
+              </div>
+
+              <button className={styles.checkoutButton}>
+                PROCEED TO CHECKOUT
+              </button>
+            </div>
+
+            </section>
+
+        )}
       </main>
     </>
   );

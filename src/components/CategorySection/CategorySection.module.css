@@ -8,10 +8,40 @@
   border-bottom: 1px solid #e5e5e5;
 }
 
+.card {
+  display: flex;
+
+  gap: 1rem;
+
+  align-items: center;
+}
+
+.card img {
+  width: 120px;
+
+  height: 140px;
+
+  object-fit: cover;
+}
+
+.card span {
+  font-family: var(--font-sans);
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+}
+
 .card h3 {
   font-family: var(--font-serif);
 
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 400;
 
   margin-bottom: 1rem;
@@ -24,4 +54,11 @@
   line-height: 1.7;
 
   max-width: 180px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.6rem;
 }
