@@ -6,7 +6,7 @@ The storefront features curated luxury-inspired collections, interactive product
 
 ## Live Demo
 
-[View Live Demo](shopping-cart-git-main-inaladevis-projects.vercel.app)
+[View Live Demo](https://shopping-cart-a300d2vwc-inaladevis-projects.vercel.app)
 
 ## Features
 
