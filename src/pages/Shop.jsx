@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import ProductCard from '../components/ProductCard/ProductCard'
 import useReveal from '../hooks/useReveal'
-import styles from './shop.module.css'
+import styles from './Shop.module.css'
 
 const CATEGORIES = ['womens-bags', 'womens-shoes', 'womens-watches', 'sunglasses']
 
