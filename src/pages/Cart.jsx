@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const SHIPPING_THRESHOLD = 500;
 const SHIPPING_COST = 25;
 
-function Cart({ cartItems, removeFromCart }) {
+function Cart({ cartItems, removeFromCart, setCartItems }) {
   const [isOrdered, setIsOrdered] = useState(false);
   const subtotal = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -17,6 +17,10 @@ function Cart({ cartItems, removeFromCart }) {
 
   const handleCheckout = () => {
     setIsOrdered(true);
+
+    if (setCartItems) {
+      setCartItems([])
+    }
   };
 
   return (

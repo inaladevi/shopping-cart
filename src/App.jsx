@@ -32,7 +32,7 @@ function App() {
         <Route
           path="/cart"
           element={
-            <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+            <Cart cartItems={cartItems} removeFromCart={removeFromCart} setCartItems={setCartItems} />
           }
         />
       </Routes>
