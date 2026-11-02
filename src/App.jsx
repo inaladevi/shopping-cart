@@ -6,13 +6,22 @@ import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 
 function App() {
-  const [cartItems, setCartItems] = useState(() => {
-    const savedCart = localStorage.getItem('atelier_noir_cart')
-    return savedCart ? JSON.parse(savedCart) : []
+    const [cartItems, setCartItems] = useState(() => {
+    try {
+      const savedCart = localStorage.getItem('atelier_noir_cart')
+      const parsed = savedCart ? JSON.parse(savedCart) : []
+      return Array.isArray(parsed) ? parsed : []
+    } catch {
+      return []
+    }
   })
 
   useEffect(() => {
-    localStorage.setItem('atelier_noir_cart', JSON.stringify(cartItems))
+    try {
+      localStorage.setItem('atelier_noir_cart', JSON.stringify(cartItems))
+    } catch {
+      // storage unavailable (e.g. private mode): the cart still works for this session
+    }
   }, [cartItems])
   
   function removeFromCart(productId) {
