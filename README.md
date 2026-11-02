@@ -13,8 +13,8 @@ The storefront features curated luxury-inspired collections, interactive product
 * **Multi-page application** built with React Router
 * **Product catalog** fetched from an external API
 * **Shopping cart functionality**:
+    * Quantity selector (− / +) on each product card before adding
     * Add products to cart
-    * Quantity selection (increment / decrement toggles)
     * Remove products from cart
 * **Cart badge** displaying total quantity of items dynamically in the header
 * **Order summary** including:
